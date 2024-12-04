@@ -98,7 +98,7 @@ animation = &"arriba"
 shape = SubResource("CapsuleShape2D_ivihq")
 
 [node name="Mob" type="RigidBody2D" parent="."]
-position = Vector2(111, 87)
+position = Vector2(244, 331)
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("6_b8ium")
