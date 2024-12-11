@@ -45,18 +45,19 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2ujb"]
-radius = 34.0
-height = 96.0
+radius = 17.7778
+height = 53.3333
 
-[node name="Mob" type="RigidBody2D"]
+[node name="Mob" type="RigidBody2D" groups=["mobs"]]
 position = Vector2(244, 331)
+scale = Vector2(0.45, 0.45)
 collision_mask = 0
 gravity_scale = 0.0
 script = ExtResource("1_1db1y")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.45, 0.45)
 sprite_frames = SubResource("SpriteFrames_jp0df")
 animation = &"caminar"
 

@@ -32,20 +32,23 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ivihq"]
-radius = 39.0
-height = 100.0
+radius = 20.2538
+height = 40.5076
 
 [node name="Player" type="Area2D"]
-position = Vector2(260, 192)
+position = Vector2(257, 108)
 script = ExtResource("1_jktrn")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
+position = Vector2(-15.75, 21.3125)
+scale = Vector2(0.45, 0.427)
 sprite_frames = SubResource("SpriteFrames_vijjk")
 animation = &"arriba"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-16, 20)
+scale = Vector2(1.13559, -1.22975)
 shape = SubResource("CapsuleShape2D_ivihq")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,14 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://dd1wy3r7owyxl"]
+[gd_scene load_steps=5 format=3 uid="uid://dd1wy3r7owyxl"]
 
 [ext_resource type="FontFile" uid="uid://0aldd1yp34yp" path="res://dodge_the_creeps_2d_assets/fonts/Xolonium-Regular.ttf" id="1_k5lue"]
 [ext_resource type="Script" path="res://hud.gd" id="1_l32bi"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_llknk"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_jkf4v"]
+events = [SubResource("InputEventAction_llknk")]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_l32bi")
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_right = 244.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -122.0
+offset_right = 122.0
 offset_bottom = 78.0
+grow_horizontal = 2
+scale = Vector2(1.00551, 1)
+size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("1_k5lue")
 theme_override_font_sizes/font_size = 32
 text = "0"
@@ -39,14 +52,19 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -79.0
-offset_top = -177.0
-offset_right = 79.0
-offset_bottom = -81.0
+offset_left = -84.0
+offset_top = -186.0
+offset_right = 74.0
+offset_bottom = -90.0
 grow_horizontal = 2
 grow_vertical = 0
+scale = Vector2(1.0795, 0.919006)
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_jkf4v")
 text = "Start"
 
 [node name="MessageTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
